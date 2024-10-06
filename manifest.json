@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Screenshot Button",
+  "version": "1.0",
+  "description": "Adds a button to take screenshots of YouTube videos.",
+  "permissions": ["activeTab", "downloads", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["*://*.youtube.com/*"]
+}
